@@ -60,6 +60,7 @@
   background: #FFFFFF;
   top: 44px;
   left: 125px;
+  z-index: 1000;
 }
 
 #themenu .themenu1 {
@@ -146,7 +147,7 @@
 #banner .isback {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: -30px;
   font-size: 34px;
   color: black;
   z-index: 100000;
@@ -156,7 +157,7 @@
 #banner .isnext {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: -30px;
   font-size: 34px;
   color: black;
   z-index: 100000;
@@ -179,4 +180,113 @@
   border-radius: 50%;
   border: 1px solid black;
   margin-left: 10px;
+}
+
+#Best {
+  margin: 0 auto;
+}
+
+#Best h1 {
+  padding-top: 52px;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+#Best .theBest {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#Best .theBest div {
+  border: 1px solid #E5E5E5;
+  padding: 0 4px;
+  margin-bottom: 44px;
+  margin-right: 32px;
+}
+
+#Best .theBest div._left {
+  margin-right: 0;
+}
+
+#Best .theBest div p {
+  font-size: 12px;
+  line-height: 22px;
+}
+
+#Best .theBest div p span._isspan {
+  padding-right: 5px;
+  color: #FE7F7F;
+}
+
+#Best .theBest div p:nth-of-type(1) {
+  color: #BED459;
+  font-weight: bold;
+  padding-top: 18px;
+}
+
+#Best .theBest div p:nth-of-type(2) a {
+  color: #999;
+}
+
+#Best .theBest div p:nth-of-type(2) a:hover {
+  text-decoration: underline;
+  color: red;
+}
+
+#Best .theBest div p:nth-of-type(3) a {
+  color: black;
+}
+
+#Best .theBest div p:nth-of-type(3) a:hover {
+  text-decoration: underline;
+  color: red;
+}
+
+#Best .theBest div p:nth-of-type(4) {
+  margin-bottom: 52px;
+}
+
+#Best .theBest div p:nth-of-type(4) span:first-child {
+  text-decoration: line-through;
+}
+
+#Best .theBest div p:nth-of-type(4) span:last-child {
+  color: #FE7200;
+}
+
+#Best .theBest div img {
+  width: 240px;
+}
+
+#showCase {
+  height: 500px;
+  background: #F0D456;
+}
+
+#showCase .showCase {
+  height: 100%;
+  background: #F7E076;
+  border-top: 1px solid #F7E076;
+  margin: 0 auto;
+}
+
+#showCase .showCase .showimg {
+  height: 414px;
+  width: 1078px;
+  background: url("../img/showcase.png") no-repeat;
+  margin: 0 auto;
+  margin-top: 52px;
+  cursor: pointer;
+}
+
+#Arrivals h1 {
+  padding-top: 52px;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  margin-bottom: 26px;
 }

@@ -3,19 +3,8 @@
             $("#isheader").load("../index.html #header");
 
             //轮播图
-            // var i=1;
-            // var setimg=setInterval(function(){
-            //      $("#banner").css({
-            //         "background-image":"url(../img/banner"+i+".jpg)"
-            //      })
-
-            //         i++;
-            //         if(i>5){
-            //             i=1;
-            //         }
-            //             console.log(666);
-            // },2000) 
-            function Lunbotu(ele,obj){
+      
+      function Lunbotu(ele,obj){
                 var defalut={
                     img:[],
                     speed:3000,
@@ -29,12 +18,13 @@
 
             }
 
-            Lunbotu.prototype={
+     Lunbotu.prototype={
                 "constructor" : Lunbotu,
                 init(){
                     var index=0;
-                    this.index=index;
-                    var width=this.ele[0].offsetWidth;
+                    
+                    
+                    console.log(width);
                     var ul=$("<ul/>").css({
                                "height":this.ele[0].offsetHeight+"px",
                                 "width":this.ele[0].offsetWidth*this.obj.img.length+"px",
@@ -43,6 +33,7 @@
                                 "left":0
                                 
                     });
+                    var width=ul.outerWidth()/this.obj.img.length;
                     
                         for(var i=0;i<this.obj.img.length;i++){
                             ul.append($("<li/>").css({
@@ -78,22 +69,43 @@
                    $(".isdotted li").eq(0).css({
                         "background-color":"black"
                    })
+                   $("#banner").mouseout(function(){
+                        $(".isback").animate({
+                                right: "-30px"
+                            })
+                             $(".isnext").animate({
+                                left: "-30px"
+                            })
+
+                   })
+                   $("#banner").mousemove(function(event) {
+                         $(".isback").stop().animate({
+                                right: "10px"
+                            })
+                             $(".isnext").stop().animate({
+                                left: "10px"
+                            })
+                   });
 
                       this.move(ul,index);
                       this.stop();
                       this.play(ul,width,index);
                        this.dotted(index,ul,width);
+                       this.isnext(ul,width);
+                       this.isback(ul,width);
                 },
                 move(ul,index,width){
                     clearInterval(this.seter);
                     this.seter=setInterval(function(){
-                      
+                         console.log(88);
                         ul.animate({
+
                             left:-index*this.ele[0].offsetWidth
                         })    
                         this.dotted(index,ul,width); 
                         index++;
-                        if(index>=5){
+                        this.index=index-1;
+                        if(index>=4){
                             index=0;
                         }
 
@@ -106,6 +118,7 @@
                    
                     this.ele.on("mouseenter","li",function(){
                         clearInterval(this.seter);
+         
                          
                     }.bind(this))
                        
@@ -113,17 +126,22 @@
                 },
                 play(ul,index,width){
                     var ul=ul;
-                  
+                   index=this.index;
+                   console.log(index);
                 ul.on("mouseleave","li",function(){
-                    console.log(66);
+                  
+            
                         clearInterval(this.seter);
 
                     this.seter=setInterval(function(){
+                        console.log(777);
                         ul.animate({
                             left:-index*this.ele[0].offsetWidth
                         })    
                         this.dotted(index,ul,width); 
                         index++;
+                        this.index=index-1;
+
                         if(index>=5){
                             index=0;
                         }
@@ -158,12 +176,58 @@
                         this.index=index;
                         
                    }.bind(this))
+                },
+                //下一张图片
+                isnext(ul,width){
+                    $(".isnext").click(function(){
+                        this.index--;
+                        if(this.index<0){
+                            this.index=4
+
+                        }
+                        ul.animate({
+                            "left":-this.index*width+"px"
+                        })
+                          $(".isdotted li").css({
+                            "background":""
+                        }).eq(this.index).css({
+                            "background":"black"
+                        })
+
+                        clearInterval(this.seter);
+                       this.play(ul,width,this.index-1);
+                    }.bind(this))
+                },
+                isback(ul,width){
+                       $(".isback").click(function(){
+                                this.index++;
+                                console.log(66);
+                                if(this.index>4){
+                                    this.index=0;
+
+                                }
+                                ul.animate({
+                                    "left":-this.index*width+"px"
+                                })
+                                  $(".isdotted li").css({
+                                    "background":""
+                                }).eq(this.index).css({
+                                    "background":"black"
+                                })
+
+                                clearInterval(this.seter);
+                               this.play(ul,width,this.index-1);
+                            }.bind(this))
                 }
+
 
             }
 
             new Lunbotu($("#banner"),{
                     img:["../img/banner1.jpg","../img/banner2.jpg","../img/banner3.jpg","../img/banner4.jpg","../img/banner5.jpg"]
             }).init();
+
+            the_Best("Best.php");
+
         })
 }(jQuery));
