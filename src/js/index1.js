@@ -1,6 +1,7 @@
 ;(function($){
         $(function(){
             $("#isheader").load("../index.html #header");
+            $("#footer").load("../index.html #footer");
 
             //轮播图
       
@@ -228,6 +229,14 @@
             }).init();
 
             the_Best("Best.php");
+           Arrivals("Best.php");
+           isweekly("Best.php");
 
+    //promotion
+    $(".promotion_ul2 li").each(function(idx,item){
+                $(this).css({
+                "background":"url(../img/promotion2_"+(idx+1)+" ) no-repeat"
+            })
+    })
         })
 }(jQuery));

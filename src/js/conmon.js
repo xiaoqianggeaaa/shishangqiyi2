@@ -152,6 +152,86 @@
                 })
         });
     }
+
+             //Arrivals操作
+    function Arrivals(thephp){
+        console.log(thephp);
+        $.get("http://localhost:1706//project/src/api/php/"+thephp+"?Best=xxx",function(data){
+                try{
+                    var datalist=JSON.parse(data);
+                }catch(e){
+                    try{
+                        var datalist=eval("("+data+")");
+                    }catch(err){
+                        var datalist=data;
+                    }
+                }
+
+                //处理数据
+                //转为jquery对象并遍历
+                $(datalist).each(function(idx,item){
+                    var thediv=$('<div/>');
+                    if((idx+1)%4===0){
+                        thediv.addClass('_left');
+                    }
+                 thediv.append($('<img/>').attr('src',item.imgurl)).appendTo('.Arrivals');
+
+
+                 var thep=$('<p/>');
+                 if(item.hot){
+                    thep.append($('<span/>').html('HOT!').addClass('_isspan'));
+                    
+                 }
+                 thep[0].innerHTML+='WEEKLY!';
+                 $(thep).appendTo(thediv);
+                   $('<p/>').append($('<a/>').attr("href","#").html(item.style)).appendTo(thediv);
+                   $('<p/>').append($('<a/>').attr("href","#").html(item.English)).appendTo(thediv);
+
+                 $('<p/>').append($('<span/>').html(item.priced)).append($('<span/>').html(item.price)).appendTo(thediv);
+
+
+                })
+        });
+    }
+   function isweekly(thephp){
+        console.log(thephp);
+        $.get("http://localhost:1706//project/src/api/php/"+thephp+"?Best=xxx",function(data){
+                try{
+                    var datalist=JSON.parse(data);
+                }catch(e){
+                    try{
+                        var datalist=eval("("+data+")");
+                    }catch(err){
+                        var datalist=data;
+                    }
+                }
+
+                //处理数据
+                //转为jquery对象并遍历
+                $(datalist).each(function(idx,item){
+                    var thediv=$('<div/>');
+                    if((idx+1)%4===0){
+                        thediv.addClass('_left');
+                    }
+                 thediv.append($('<img/>').attr('src',item.imgurl)).appendTo('.weekly');
+
+
+                 var thep=$('<p/>');
+                 if(item.hot){
+                    thep.append($('<span/>').html('HOT!').addClass('_isspan'));
+                    
+                 }
+                 thep[0].innerHTML+='WEEKLY!';
+                 $(thep).appendTo(thediv);
+                   $('<p/>').append($('<a/>').attr("href","#").html(item.style)).appendTo(thediv);
+                   $('<p/>').append($('<a/>').attr("href","#").html(item.English)).appendTo(thediv);
+
+                 $('<p/>').append($('<span/>').html(item.priced)).append($('<span/>').html(item.price)).appendTo(thediv);
+
+
+                })
+        });
+    }
     //多属性动画函数
               function animate(ele,obj,callback){
                     //定义一个值，来计算传入属性的数量
