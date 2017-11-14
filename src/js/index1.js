@@ -80,7 +80,8 @@
                    })
 
                       this.move(ul,index);
-                      
+                      this.stop();
+                      this.play(ul,width,index);
                        this.dotted(index,ul,width);
                 },
                 move(ul,index,width){
@@ -103,19 +104,21 @@
                 },
                 stop(index,ul,width){
                    
-                    this.ele.on("mouseover","li",function(){
+                    this.ele.on("mouseenter","li",function(){
                         clearInterval(this.seter);
-                         this.play(ul,index,width);
+                         
                     }.bind(this))
                        
                    
                 },
                 play(ul,index,width){
-                    clearInterval(this.seter);
-                 this.ele.on("mouseout","li",function(){
+                    var ul=ul;
+                  
+                ul.on("mouseleave","li",function(){
                     console.log(66);
-                    this.seter=setInterval(function(){
+                        clearInterval(this.seter);
 
+                    this.seter=setInterval(function(){
                         ul.animate({
                             left:-index*this.ele[0].offsetWidth
                         })    
@@ -153,7 +156,7 @@
                         
                         index=$(e.target).index();
                         this.index=index;
-                        this.stop(ul,index,width)
+                        
                    }.bind(this))
                 }
 
