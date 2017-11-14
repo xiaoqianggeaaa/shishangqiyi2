@@ -1,0 +1,303 @@
+#this_input {
+  height: 360px;
+  width: 760px;
+  background: white;
+  border-top: 1px solid white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#this_input #myform {
+  display: none;
+  height: 360px;
+  padding-left: 90px;
+  width: 670px;
+}
+
+#this_input #myform > p:first-child {
+  width: 522px;
+  height: 48px;
+  border: 1px solid black;
+  margin-top: 60px;
+}
+
+#this_input #myform > p:first-child span {
+  float: left;
+  width: 50%;
+  text-align: center;
+  line-height: 48px;
+  font-size: 14px;
+}
+
+#this_input #myform > p:first-child .isspan {
+  background: black;
+  color: white;
+}
+
+#this_input #myform > p:nth-of-type(2) {
+  width: 522px;
+  height: 35px;
+  font-size: 14px;
+  line-height: 35px;
+  background: #EEEEEE;
+  margin-top: 20px;
+  color: #6F6F6F;
+}
+
+#this_input #myform > p:nth-of-type(2) span {
+  color: black;
+  padding-left: 14px;
+}
+
+#this_input #myform .the_input {
+  height: 79px;
+  margin-top: 12px;
+  float: left;
+  width: 400px;
+}
+
+#this_input #myform .the_input > p {
+  height: 35px;
+  margin-bottom: 12px;
+  border: 1px solid #E2E2E2;
+}
+
+#this_input #myform .the_input > p > input {
+  border: 0 none;
+  display: block;
+  height: 33px;
+  width: 380px;
+  color: #C9C9C9;
+  padding-left: 18px;
+}
+
+#this_input #myform #btn1 {
+  height: 81px;
+  width: 110px;
+  background: black;
+  color: white;
+  line-height: 79px;
+  text-align: center;
+  float: left;
+  margin-left: 12px;
+  cursor: pointer;
+  margin-top: 14px;
+}
+
+#this_input #myform > div:last-child {
+  clear: both;
+  padding-top: 27px;
+}
+
+#this_input #myform > div:last-child input {
+  float: left;
+  display: block;
+}
+
+#this_input #myform > div:last-child span {
+  float: left;
+  display: block;
+  color: #6F6F83;
+  font-size: 14px;
+}
+
+#this_input #myform > div:last-child ul {
+  float: left;
+  margin-left: 132px;
+}
+
+#this_input #myform > div:last-child ul li {
+  float: left;
+}
+
+#this_input #myform > div:last-child ul li a {
+  color: #6F6F83;
+  padding: 0 3px;
+  border-right: 1px solid #6F6F83;
+  font-size: 12px;
+}
+
+#this_input #myform > div:last-child ul li a:hover {
+  text-decoration: underline;
+}
+
+#this_input #myform > div:last-child ul li a.isthea {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: underline;
+  color: black;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#isbackground {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 100000;
+  background: rgba(128, 128, 128, 0.5);
+}
+
+#close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: #2B2B2B;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+#myform1 .myform1 {
+  height: 200px;
+  width: 530px;
+  padding-top: 88px;
+  padding-left: 88px;
+}
+
+#myform1 .myform1 div {
+  float: left;
+  height: 100%;
+}
+
+#myform1 .myform1 > div:first-child {
+  width: 405px;
+}
+
+#myform1 .myform1 > div:first-child > p input {
+  border: 0 none;
+  display: block;
+  padding-left: 12px;
+  box-sizing: border-box;
+}
+
+#myform1 .myform1 > div:first-child > p:first-child {
+  width: 401px;
+  border: 1px solid #ccc;
+  height: 35px;
+}
+
+#myform1 .myform1 > div:first-child > p:first-child input {
+  width: 100%;
+  height: 33px;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(2) {
+  margin-top: 12px;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(2) span {
+  display: block;
+  float: left;
+  width: 192px;
+  height: 35px;
+  border: 1px solid #ccc;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(2) span input {
+  width: 100%;
+  height: 33px;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(2) span:first-child {
+  margin-right: 13px;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(3) {
+  margin-top: 12px;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(3) span {
+  display: block;
+  float: left;
+  width: 192px;
+  height: 35px;
+  border: 1px solid #ccc;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(3) span input {
+  width: 100%;
+  height: 33px;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(3) span:first-child {
+  margin-right: 13px;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(4) {
+  margin-top: 12px;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(4) span:first-child {
+  display: block;
+  float: left;
+  width: 192px;
+  height: 35px;
+  border: 1px solid #ccc;
+  margin-right: 13px;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(4) span:first-child input {
+  width: 100%;
+  height: 33px;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(4) .yanzheng {
+  display: block;
+  width: 70px;
+  float: left;
+  height: 35px;
+  border: 1px solid #ccc;
+  margin-right: 13px;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(4) .yanzheng input {
+  width: 100%;
+  height: 35px;
+}
+
+#myform1 .myform1 > div:last-child {
+  width: 114px;
+  height: 200px;
+  background: black;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+#myform1 .myform1 > div:last-child > p:first-child {
+  padding-top: 48px;
+  font-size: 26px;
+}
+
+#myform1 > p {
+  padding-left: 88px;
+}
+
+#myform1 > p span {
+  display: block;
+  float: left;
+  font-size: 12px;
+}
+
+#myform1 > p span:last-child {
+  margin-left: 237px;
+}
+
+#myform1 > p span:last-child a {
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+  text-decoration: underline;
+}

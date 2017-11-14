@@ -1,5 +1,16 @@
 ;(function($){
     $(function(){
+          //input关闭
+    $("#showit").click(function(){
+      
+        $("#isbackground").fadeIn();
+        return false;
+    })
+    $("#close").click(function(){
+      $("#isbackground").fadeOut();
+    })
+
+  
         //fristdiv_img操作
         //设置颜色
 
