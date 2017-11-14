@@ -1,0 +1,182 @@
+#nav {
+  height: 53px;
+  border-top: 1px solid #E6E6E6;
+}
+
+#nav ul li {
+  float: left;
+}
+
+#nav ul li .first_menu {
+  height: 10px;
+  width: 20px;
+  background: url(../img/first_menu.png) no-repeat;
+  background-size: 100% 100%;
+  margin-top: 11px;
+  margin-left: 127px;
+  position: relative;
+}
+
+#nav ul li span {
+  display: block;
+  float: left;
+  padding-top: 14px;
+}
+
+#nav ul li span .ismenu {
+  padding-left: 0;
+  font-weight: normal;
+}
+
+#nav ul li span a {
+  display: block;
+  padding: 0px 16px;
+  font-size: 14px;
+  color: #2B2B2B;
+  font-weight: bold;
+}
+
+#nav ul li span a:hover {
+  color: #33B0F0;
+  text-decoration: underline;
+}
+
+#nav ul li span .last_a {
+  border-right: 1px solid #bbb;
+  padding-right: 35px;
+}
+
+#nav ul li span .first_a {
+  padding-left: 35px;
+}
+
+#themenu {
+  display: none;
+  height: 542px;
+  width: 1097px;
+  border: 1px solid #BBBBBB;
+  border-right: 0 none;
+  position: absolute;
+  background: #FFFFFF;
+  top: 44px;
+  left: 125px;
+}
+
+#themenu .themenu1 {
+  border-right: 1px solid #BBBBBB;
+  box-sizing: border-box;
+  height: 100%;
+  width: 25%;
+  float: left;
+}
+
+#themenu .themenu1 a:hover {
+  color: #33B0F0;
+  text-decoration: underline;
+}
+
+#themenu .themenu1 h4 {
+  height: 41px;
+  line-height: 41px;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  background: #F2F2F2;
+  margin-bottom: 30px;
+  padding-left: 18px;
+}
+
+#themenu .themenu1 ul {
+  float: left;
+}
+
+#themenu .themenu1 ul li {
+  clear: both;
+  margin-bottom: 72px;
+  font-size: 12px;
+}
+
+#themenu .themenu1 ul li a {
+  font-size: 12px;
+  color: #2B2B2B;
+  font-weight: bold;
+  padding-left: 18px;
+}
+
+#themenu .themenu1 ol {
+  width: 145px;
+  float: right;
+}
+
+#themenu .themenu1 ol li {
+  clear: both;
+  line-height: 18px;
+}
+
+#themenu .themenu1 ol li a {
+  font-weight: normal;
+  display: block;
+  font-size: 12px;
+  color: #2B2B2B;
+}
+
+#themenu .themenu1 ol li .the_bottom {
+  margin-bottom: 20px;
+}
+
+#the_float {
+  float: left;
+  position: relative;
+  padding-bottom: 30px;
+}
+
+#the_float:hover #themenu {
+  display: block;
+}
+
+#banner {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  left: 0;
+  z-index: 1;
+}
+
+#banner .isback {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 34px;
+  color: black;
+  z-index: 100000;
+  display: none;
+}
+
+#banner .isnext {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  font-size: 34px;
+  color: black;
+  z-index: 100000;
+  display: none;
+}
+
+#banner .isdotted {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 100;
+  display: none;
+}
+
+#banner .isdotted li {
+  float: left;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin-left: 10px;
+}
