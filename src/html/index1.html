@@ -7,38 +7,143 @@
         <link rel="stylesheet" type="text/css" href="../css/base.css" />
         <link rel="stylesheet" type="text/css" href="../css/font.css" />
         <link rel="stylesheet" type="text/css" href="../css/input.css" />
-        <script src="../js/jquery-3.2.1.js"></script>
+<!--         <script src="../js/jquery-3.2.1.js"></script>
         <script src="../js/conmon.js"></script>
+       
         <script src="../js/index1.js"></script>
+        <script src="../js/input.js"></script>
+        <script src="../js/user.js"></script> -->
     </head>
     <body>
-     <div id="isbackground">
-            <div id="this_input">
-                    <div id="close">&times;</div>
-                <form action="#" id="myform">
-                    <p class="clearfix">
-                    <span class="thebtn1 isspan">普通会员登录</span><span class="thebtn2">批发会员登录</span>
-                    </p>
-                    <p><span>注意！</span>普通会员和批发会员帐户不共享，请知晓！</p>
-                    <div class="the_input">
-                            <p><input type="text" id="inp1" placeholder="电子邮箱" /></p>
-                            <p><input type="text" id="inp2" placeholder="你的密码" /></p>
+           <div id="isbackground">
+                    <div id="this_input">
+                              <div id="close">&times;</div>
+                          <form action="#" id="myform">
+                              <p class="clearfix">
+                              <span class="thebtn1 isspan">普通会员登录</span><span class="thebtn2">批发会员登录</span>
+                              </p>
+                              <p><span>注意！</span>普通会员和批发会员帐户不共享，请知晓！</p>
+                              <p class="istrue"></p>
+                              <div class="the_input">
+                                      <p><input type="text" id="inp1" placeholder="电子邮箱" /></p>
+                                      <p><input type="password" id="inp2" placeholder="你的密码" /></p>
+                              </div>
+                              <div id="btn1">登录</div>
+                              <div class="clearfix">
+                                  <input type="checkbox" />
+                                  <span>保存电子邮件</span>
+                                  <ul>
+                                      <li><a href="#">扫码登录</a></li>
+                                      <li><a href="#" class="isthea">新用户注册</a></li>
+                                      <li><a href="#">忘记密码</a></li>
+                                      <li><a href="#">支付宝登录</a></li>
+                                      
+                                  </ul>
+                              </div>
+                          </form>
+                          <form action="#" id="myform1">
+                            <p class="thetrue"></p>
+                              <div class="myform1 clearfix">
+                                <div>
+                                  <p>
+                                  <input type="text" class="input1" placeholder="电子邮件"/>
+                                  </p>
+                                  <p class="clearfix">
+                                    <span><input type="password" placeholder="你的密码" class="input2" /></span>
+                                    <span><input type="password" placeholder="再次输入密码" class="input3" /></span>
+                                  </p>
+                                   <p class="clearfix">
+                                    <span><input type="text" placeholder="用户名" class="input4" /></span>
+                                    <span><input type="text" placeholder="性别" class="input5" /></span>
+                                  </p>
+                                  <p>
+                                    <span><input type="text"class="input6" placeholder="手机号" /></span>
+                                    <span class="yanzheng yanzheng1"></span>
+                                    <span class="yanzheng yanzheng2">
+                                      <input type="text" placeholder="验证码" class="input7" />
+                                    </span>
+                                  </p>
+                                </div>
+                                <div class="isdenglu">
+                                      <p>注册</p>
+                                      <p>(送100元现金礼包)</p>
+                                </div>
+                              </div>
+                              <p>
+                                <span>
+                                <input type="checkbox" checked="checked" /></span>
+                                <span>我已同意《时尚起义用户条款》</span>
+                                <span>
+                                  <a href="#" class="isthea1">老用户登录</a>
+                                </span>
+                              </p>
+                          </form>
                     </div>
-                    <div id="btn1">登录</div>
-                    <div class="clearfix">
-                        <input type="checkbox" />
-                        <span>保存电子邮件</span>
-                        <ul>
-                            <li><a href="#">扫码登录</a></li>
-                            <li><a href="#" class="isthea">新用户注册</a></li>
-                            <li><a href="#">忘记密码</a></li>
-                            <li><a href="#">支付宝登录</a></li>
-                            
-                        </ul>
-                    </div>
-                </form>
+
             </div>
-    </div>
+                            <!-- //侧边栏 -->
+                 <span class="isclose">></span>
+                 <p class="inputp">
+                    <span>
+                        <input type="text" placeholder="请输入商品名称可搜索相关信息" />
+                    </span>
+                    <span>GO</span>
+                 </p>
+                <div id="aside">
+                    <div class="aside">
+                      <p class="iconfont clearfix">
+
+                           <span class="icon-rili"></span>
+                           <span class="icon-fangdajing isshousuo"></span>
+                      </p>
+                      <ul class="iconfont">
+                          <li>
+                          <span class="icon-yonghu"></span>
+                          <span >登录/注册</span>
+                          </li>
+                          <li>
+                          <span class="icon-gouwuchekong"></span>
+                          <span>购物车<i>(0)</i></span>
+                          </li>
+                          <li>
+                          <span class="icon-xin"></span>
+                          <span>暂存架<i>(0)</i></span>
+                          </li>
+                      </ul>
+                      <p class="shaomiao">App扫描下载</p>
+                      <ol>
+                          <li>今日浏览</li>
+                          <li>关注微信</li>
+                          <li>常见问题</li>
+                          <li >在线留言
+                                <i class="tuijian"></i>
+                          </li>
+                          <li></li>
+                      </ol>
+                    </div>
+                </div>
+                <!-- 返顶 -->
+                   <div id="top">
+                    <a href="#"></a>
+                  </div>
+                 <!--        头部隐藏盒子 -->
+                <div id="scroll">
+                  <ul class="scroll clearfix">
+                    <li class="theone">shishangqiyi</li>
+                    <li><a href="#">最新商品</a></li>
+                    <li><a href="#">一周爆款</a></li>
+                    <li><a href="#">外套</a></li>
+                    <li><a href="#">T-恤衫</a></li>
+                    <li><a href="#">衬衫</a></li>
+                    <li><a href="#">针织衫&开襟衫</a></li>
+                    <li><a href="#">裤装</a></li>
+                    <li><a href="#">鞋</a></li>
+                    <li><a href="#">包</a></li>
+                    <li><a href="#">配饰</a></li>
+                    <li><a href="#">热卖商品</a></li>
+                    <li><a href="#">最佳口碑</a></li>
+                  </ul>
+                </div>
         <div id="content">
             <div id="isheader"></div>
             <div id="nav">
@@ -258,4 +363,6 @@
         <div id="footer"></div>
         </div>
     </body>
+    <script src="../js/require.js" data-main="../js/home1.js"></script>
+   
 </html>

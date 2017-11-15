@@ -1,5 +1,52 @@
 ;(function($){
     $(function(){
+      var istheman=location.search;
+
+      if(istheman){
+          $('.thefirst1').css({
+                "border-color":"#E4E4E4"
+            });
+             $('.thefirst2').css({
+                "border-color":"#A1CAE8"
+            });
+                
+               $(".the_third_div").html("");
+               $(".the_third1_div").html("");
+               $(".the_fourth_div").html("");
+            isman();
+      }
+      function isman(){
+
+                     $('.first_div_r>div').each(function(idx,item){
+                              $(this).css({
+                                  backgroundImage: "url(img/n_first_img"+(idx+3)+".gif)"
+                              });
+                          })
+
+                       $(".first_div_l div").eq(0).css({
+                              "background-image":"url(img/n_first_img1.jpg)"
+                       });
+                        $(".first_div_l div").eq(1).css({
+                              "background-image":"url(img/n_first_img2.gif)"
+                       });
+
+                //second_div_img操作
+                  $('.second_div>div').each(function(idx){
+                          $(this).css({
+                                backgroundImage: "url(img/n_second_img"+(idx+1)+".jpg)"  
+                          })
+                      });
+
+                                  //thrid_div
+                              $(".the_third_div").html("");
+                               $(".the_third1_div").html("");
+                               $(".the_fourth_div").html("");
+                              the_third("n_third_div.php");
+                                the_third1("n_third_div.php");
+                                the_fourth("n_fourth_div.php");
+
+      }
+
   $(".nav").on("click","span",function(){
            //fristdiv_img操作
            //
@@ -71,11 +118,7 @@
                    $(this).prev().css({
                         "border-color":"#C9B8F1"
                     })
-                  $('.first_div_r>div').each(function(idx,item){
-                    $(this).css({
-                        backgroundImage: "url(img/first_img"+(idx+3)+".gif)"
-                    });
-                })
+            location.href='http://localhost:1706/project/src/html/index1.html';
        }
 
 

@@ -3,6 +3,9 @@
             $("#isheader").load("../index.html #header");
             $("#footer").load("../index.html #footer");
 
+
+
+
             //轮播图
       
       function Lunbotu(ele,obj){
@@ -99,7 +102,7 @@
                     clearInterval(this.seter);
                     this.seter=setInterval(function(){
                          console.log(88);
-                        ul.animate({
+                        animate({
 
                             left:-index*this.ele[0].offsetWidth
                         })    

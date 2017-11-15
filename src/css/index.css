@@ -588,6 +588,7 @@
 span.isclose {
   display: block;
   position: fixed;
+  z-index: 100000000000000;
   right: 120px;
   top: 125px;
   height: 55px;
@@ -605,6 +606,7 @@ span.isclose {
   width: 120px;
   background: #F1F1F1;
   position: fixed;
+  z-index: 100000000000000;
   right: 0;
   top: 125px;
 }
@@ -715,7 +717,7 @@ span.isclose {
 
 #top {
   height: 34px;
-  width: 100px;
+  width: 120px;
   background: url("../img/top.png") no-repeat;
   position: fixed;
   bottom: 0;

@@ -1,52 +1,7 @@
 ;(function($){
     $(function(){
-          //input关闭
-    $("#showit").click(function(){
-      $("#myform").fadeIn();
-      $("#myform1").css({
-        "display":"none"
-      })
-        $("#isbackground").fadeIn();
-        return false;
-    })
-     $("#showit1").click(function(){
-         $("#myform1").fadeIn();
-           $("#myform").css({
-        "display":"none"
-      });
-        $("#isbackground").fadeIn();
-        return false;
-    })
-    $("#close").click(function(){
-      $("#isbackground").fadeOut();
-    })
-
-  $('.isthea').click(function(){
-      $("#myform").fadeOut();
-      $("#myform1").fadeIn();
-
-
-  })
-    $('.isthea1').click(function(){
-      $("#myform").fadeIn();
-      $("#myform1").fadeOut();
-
-
-  })
-    //颜色切换
-    $('.thebtn2').click(function(){
-        $(this).toggleClass('isspan');
-        $('.thebtn1').toggleClass('isspan');
-        $('.isthea').fadeOut();
-        
-    })
-    $('.thebtn1').click(function(){
-        $(this).toggleClass('isspan');
-        $('.thebtn2').toggleClass('isspan');
-        $('.isthea').fadeIn();
-
-        
-    })
+       var istheman=location.search;
+   if(!istheman){
         //fristdiv_img操作
         //设置颜色
 
@@ -63,13 +18,16 @@
                   "background-image": "url(img/second_div"+(idx+1)+".jpg)"  
             })
         });
-      //third_div
+  
+              //third_div
         the_third("third_div.php");
         //third_div操作
       the_third1("third_div.php");
 
         //fourth_div操作
         the_fourth("fourth_div.php");
+    }
+
 //
 //滚轮事件
       $(window).scroll(function(){

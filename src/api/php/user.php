@@ -7,8 +7,9 @@
         $url="../../json/user.json";
          $file=fopen($url,'r');
         $html=fread($file,filesize($url));
-        $html=json_decode($html,true);
         $arr=$html;
+        $html=json_decode($html,true);
+        
         fclose($file);
         $queue = array();
     if($user!=""&&$writeit==""){
@@ -25,7 +26,8 @@
            }
             
     }else{
-            //遍历创建新的数组
+        if($password!=""){
+                    //遍历创建新的数组
       foreach($html as $thekey=>$theval){
             $queue = array($thekey=>$theval) + $queue;
 
@@ -33,9 +35,13 @@
          $queue=array($user=>$password)+$queue;
          $queue=json_encode($queue,JSON_UNESCAPED_UNICODE);
          
-        
+            
     //写进文件
         $isfile=fopen($url,"w");
         fwrite($isfile, $queue);
+        }else{
+            echo $arr;
+        }
+
     }
 ?>
