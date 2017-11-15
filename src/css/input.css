@@ -136,6 +136,7 @@ html, body {
 }
 
 #isbackground {
+  display: none;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -157,6 +158,10 @@ html, body {
   text-align: center;
   line-height: 36px;
   cursor: pointer;
+}
+
+#myform1 {
+  display: none;
 }
 
 #myform1 .myform1 {

@@ -2,7 +2,12 @@
     $(function(){
           //input关闭
     $("#showit").click(function(){
-      
+      $("#myform").fadeIn();
+        $("#isbackground").fadeIn();
+        return false;
+    })
+     $("#showit1").click(function(){
+      $("#myform1").fadeIn();
         $("#isbackground").fadeIn();
         return false;
     })
@@ -10,7 +15,32 @@
       $("#isbackground").fadeOut();
     })
 
-  
+  $('.isthea').click(function(){
+      $("#myform").fadeOut();
+      $("#myform1").fadeIn();
+
+
+  })
+    $('.isthea1').click(function(){
+      $("#myform").fadeIn();
+      $("#myform1").fadeOut();
+
+
+  })
+    //颜色切换
+    $('.thebtn2').click(function(){
+        $(this).toggleClass('isspan');
+        $('.thebtn1').toggleClass('isspan');
+        $('.isthea').fadeOut();
+        
+    })
+    $('.thebtn1').click(function(){
+        $(this).toggleClass('isspan');
+        $('.thebtn2').toggleClass('isspan');
+        $('.isthea').fadeIn();
+
+        
+    })
         //fristdiv_img操作
         //设置颜色
 
