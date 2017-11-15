@@ -167,7 +167,6 @@ html, body {
 #myform1 .myform1 {
   height: 200px;
   width: 530px;
-  padding-top: 88px;
   padding-left: 88px;
 }
 
@@ -263,13 +262,20 @@ html, body {
   width: 70px;
   float: left;
   height: 35px;
+  line-height: 35px;
   border: 1px solid #ccc;
   margin-right: 13px;
+  text-align: center;
 }
 
 #myform1 .myform1 > div:first-child > p:nth-of-type(4) .yanzheng input {
   width: 100%;
   height: 35px;
+}
+
+#myform1 .myform1 > div:first-child > p:nth-of-type(4) .yanzheng1 {
+  font-style: italic;
+  font-family: "Times New Roman",Georgia,Serif;
 }
 
 #myform1 .myform1 > div:last-child {
