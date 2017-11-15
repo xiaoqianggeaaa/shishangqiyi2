@@ -196,6 +196,8 @@
                 })
         });
     }
+
+        //isweekly
    function isweekly(thephp){
         console.log(thephp);
         $.get("http://localhost:1706//project/src/api/php/"+thephp+"?Best=xxx",function(data){

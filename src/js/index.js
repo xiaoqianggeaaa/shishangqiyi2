@@ -3,11 +3,17 @@
           //input关闭
     $("#showit").click(function(){
       $("#myform").fadeIn();
+      $("#myform1").css({
+        "display":"none"
+      })
         $("#isbackground").fadeIn();
         return false;
     })
      $("#showit1").click(function(){
-      $("#myform1").fadeIn();
+         $("#myform1").fadeIn();
+           $("#myform").css({
+        "display":"none"
+      });
         $("#isbackground").fadeIn();
         return false;
     })
