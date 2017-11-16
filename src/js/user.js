@@ -10,7 +10,7 @@
         
         });
 
-            //input
+            //用户登录
      function thedeng(thephp,user){
         
         $.get("http://localhost:1706//project/src/api/php/"+thephp+"?user="+user,function(data){
@@ -23,12 +23,21 @@
                         var datalist=data;
                     }
                 }
-                console.log(datalist);
+               
                 if(datalist==""){
                     $(".istrue").html("不存在该用户，请先注册");
                 }else{
                         if($('#inp2').val()==datalist){
                             $('#isbackground').fadeOut();
+                            var date=new Date();
+                            date.setDate(date.getDate()+7);
+                            console.log($('#check')[0].checked);
+                            if($('#check')[0].checked){
+                                document.cookie="user="+$("#inp1").val()+";expires="+date.toString()+";path=/";
+                            }else{
+                                       document.cookie="user="+$("#inp1").val();
+                            }
+                         
                         }else{
                         $(".istrue").html("密码不正确，请重新输入");
                         $('#inp2').val("");

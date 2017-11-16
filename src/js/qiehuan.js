@@ -53,22 +53,25 @@
            $(".nav span").css({
                    "border-color":"#F1F1F1"
            })
-            if($(this).hasClass('thefirst2')){
-                $(this).prev().css({
-                    "border-color":"#A1CAE8"
-                })
-             $('.first_div_r>div').each(function(idx,item){
-                    $(this).css({
-                        backgroundImage: "url(img/n_first_img"+(idx+3)+".gif)"
-                    });
-                })
+           //判断点击的盒子
+         if($(this).hasClass('thefirst2')){
+                  location.href="index.html?xxx";
+                  console.log(666);
+                    $(this).prev().css({
+                        "border-color":"#A1CAE8"
+                    })
+                 $('.first_div_r>div').each(function(idx,item){
+                        $(this).css({
+                            backgroundImage: "url(img/n_first_img"+(idx+3)+".gif)"
+                        });
+                    })
 
-             $(".first_div_l div").eq(0).css({
-                    "background-image":"url(img/n_first_img1.jpg)"
-             });
-              $(".first_div_l div").eq(1).css({
-                    "background-image":"url(img/n_first_img2.gif)"
-             });
+                 $(".first_div_l div").eq(0).css({
+                        "background-image":"url(img/n_first_img1.jpg)"
+                 });
+                  $(".first_div_l div").eq(1).css({
+                        "background-image":"url(img/n_first_img2.gif)"
+                 });
 
       //second_div_img操作
         $('.second_div>div').each(function(idx){

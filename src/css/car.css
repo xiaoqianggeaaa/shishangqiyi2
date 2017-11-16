@@ -1,0 +1,122 @@
+#contanier {
+  width: 145px;
+  float: left;
+  height: 800px;
+  border: 1px solid #ccc;
+}
+
+#isright {
+  overflow: hidden;
+  height: 800px;
+  padding-left: 10px;
+}
+
+#isright h1 {
+  padding-top: 74px;
+  text-align: center;
+  padding-bottom: 32px;
+  width: 1100px;
+}
+
+#isright .carp1 {
+  height: 41px;
+  line-height: 41px;
+  padding-left: 12px;
+  width: 1088px;
+  background: #F4F4F4;
+  border: 1px solid #E6E6E6;
+  font-size: 14px;
+}
+
+#isright .carp1 span {
+  font-weight: bold;
+}
+
+#isright #mytable {
+  width: 1100px;
+  border-spacing: 0;
+}
+
+#isright #mytable th {
+  border-bottom: 1px solid #E6E6E6;
+}
+
+#isright .carp2 {
+  font-size: 14px;
+  color: black;
+  line-height: 72px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#isright .cardiv {
+  height: 160px;
+  width: 1100px;
+  background: #F4F4F4;
+}
+
+#isright .cardiv > span {
+  float: left;
+  font-size: 14px;
+  margin-left: 16px;
+  margin-top: 16px;
+}
+
+#isright .cardiv > ul {
+  float: right;
+  width: 270px;
+  padding-right: 10px;
+  padding-top: 27px;
+}
+
+#isright .cardiv > ul li {
+  font-size: 14px;
+  color: #6F6F6F;
+  font-weight: bold;
+  line-height: 35px;
+  overflow: hidden;
+}
+
+#isright .cardiv > ul li span:first-child {
+  float: left;
+}
+
+#isright .cardiv > ul li span:last-child {
+  float: right;
+}
+
+#isright ul.kaoul {
+  float: right;
+  width: 515px;
+  margin-top: 20px;
+}
+
+#isright ul.kaoul li {
+  float: left;
+  width: 202px;
+  height: 50px;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#isright ul.kaoul #toindex {
+  background: #AEAEAE;
+}
+
+#isright ul.kaoul #pay {
+  background: #3E3E3E;
+}
+
+#istheimg {
+  height: 226px;
+  width: 1100px;
+  margin: 400px auto;
+  background: url("../img/big_img.png");
+}
+
+#content {
+  position: relative;
+}
