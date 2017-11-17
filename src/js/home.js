@@ -7,7 +7,7 @@ requirejs(['jQuery'],function(){
     requirejs(['conmon'],function(){
         
             requirejs(['input','qiehuan','index','user',],function(){
-                requirejs(['through']);
+                requirejs(['through','cookie']);
             });
      
     })

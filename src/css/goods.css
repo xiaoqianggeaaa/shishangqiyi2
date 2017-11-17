@@ -160,6 +160,7 @@
   border-radius: 50%;
   text-align: center;
   line-height: 13px;
+  cursor: pointer;
 }
 
 #is_right .isnews .isnew_mation .mation_p8 #lowit {
@@ -172,6 +173,7 @@
   border-radius: 50%;
   text-align: center;
   line-height: 13px;
+  cursor: pointer;
 }
 
 #is_right .isnews .isnew_mation .mation_p9 {

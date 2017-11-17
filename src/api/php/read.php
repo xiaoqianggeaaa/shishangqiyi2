@@ -19,7 +19,7 @@
            
            $sql="insert into best(id,imgurl,title,style,English,priced,price) values ('$a','$val[imgurl]','$val[title]','$val[style]','$val[English]','$val[priced]','$val[price]')";
                  $result=$conn->query($sql);
-           echo $a;
+         
         }
 
             if($result){

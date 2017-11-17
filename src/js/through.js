@@ -1,4 +1,5 @@
 $(function(){
+    console.log(666);
     var divs=document.querySelectorAll(".the_third1_div div");
     //给第三div里面div加个索引
    divs.forEach(function(item,idx){
@@ -26,7 +27,12 @@ $(function(){
             "idx":idx+1
         }).on("click",function(){
                     var idx=$(this).attr('idx');
+                      if(isthediv){
+                        var div="n_fourth_div";
+                      }else{
                         var div="thegoodslist";
+                      }
+                        
                         location.href="./html/goods.html?id="+idx+"&&div="+div;
         })
 
@@ -36,10 +42,17 @@ $(function(){
         })
         }).on("click",function(){
                     var idx=$(this).attr('idx');
-                        var div="third_div";
+                    if(isthediv){
+                      var div="n_third_div";
+                    }else{
+                       var div="third_div";
+                    }
+                       
                         location.href="./html/goods.html?id="+idx+"&&div="+div;
         })
 
 
    })
+
+  
 })

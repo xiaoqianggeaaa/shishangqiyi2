@@ -1,7 +1,9 @@
 ;(function($){
     $(function(){
 
+         
         $('#btn1').on("click",function(){
+
             setTimeout(function(){
              if($('.istrue').html()===""){
                  thedeng('user.php',$("#inp1").val()); 
@@ -31,11 +33,15 @@
                             $('#isbackground').fadeOut();
                             var date=new Date();
                             date.setDate(date.getDate()+7);
-                            console.log($('#check')[0].checked);
+                          
                             if($('#check')[0].checked){
+                                console.log(666);
                                 document.cookie="user="+$("#inp1").val()+";expires="+date.toString()+";path=/";
+                                    location.reload();
+
                             }else{
                                        document.cookie="user="+$("#inp1").val();
+
                             }
                          
                         }else{
@@ -98,5 +104,10 @@
             });
             
         }
+
+    //点击挑转到购物车页面
+    $(".num").parent().on('click',function(){
+        location.href="http://localhost:1706/project/src/html/car.html";
+    })
     })
 })(jQuery);

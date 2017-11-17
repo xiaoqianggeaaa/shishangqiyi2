@@ -7,7 +7,10 @@ requirejs(['jQuery'],function(){
     
         
             requirejs(['goodlist','conmon'],function(){
-                requirejs(['input','qiehuan1','user']);
+
+                requirejs(['input','qiehuan1','user'],function(){
+                    requirejs(['cookie']);
+                });
             });
      
    

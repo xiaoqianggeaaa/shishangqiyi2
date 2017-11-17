@@ -1,5 +1,14 @@
 ;(function($){
-   
+      $("#content").on("click",function(){
+          $(".inputp").fadeOut();
+      })
+      $(".gouwuche").on("click",function(){
+          location.href="./html/car.html";
+      })
+      $("#toindex").on("click",function(){
+          location.href="../index.html";
+
+      })
     $(function(){
 
                  //input关闭

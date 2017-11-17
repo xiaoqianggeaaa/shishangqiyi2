@@ -89,6 +89,7 @@
                   the_fourth("n_fourth_div.php");
        }else if($(this).hasClass('thefirst1')){
                 //换色
+                 location.href="index.html";
                    $(this).prev().css({
                                     "border-color":"#FF5F6E"
                                 })
