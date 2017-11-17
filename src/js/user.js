@@ -57,8 +57,14 @@
                      
                 
                  setTimeout(function(){
+                        var user=$(".input1").val();
+                        var password=$(".input2").val();
+                        var username=$(".input4").val();
+                        var sex=$(".input5").val();
+                        var phone=$(".input6").val();
                     if($('.thetrue').html()===""){
-                      sumb("user.php",$('.input1').val(),$('.input2').val());
+                        sumb("usernews.php",user,password,username,sex,phone);
+                     
                           $("#myform").fadeIn();
                           $("#myform1").css({
                             "display":"none"
@@ -71,17 +77,20 @@
             });
 
         $('.input1').on('blur',function(){
-            sumb("user.php",$('.input1').val());
+                var user=$(".input1").val();
+
+                console.log(username);
+            sumb("usernews.php",user,password,username,sex,phone);
         })
 
 
         //注册函数
-    function sumb(thephp,user,password){
+    function sumb(thephp,user,password,username,sex,phone){
         if(password==undefined){
             password="";
         }
        
-        $.get("http://localhost:1706//project/src/api/php/"+thephp+"?writeit=xx&&user="+user+"&&password="+password,function(data){
+        $.get("http://localhost:1706//project/src/api/php/"+thephp+"?writeit=xx&&user="+user+"&&password="+password+"&&username="+username+"&&sex="+sex+"&&phone="+phone,function(data){
                 try{
                     var datalist=JSON.parse(data);
                 }catch(e){
@@ -94,11 +103,9 @@
                 if(datalist!=""){
                  for(var obj in datalist){
                     
-                    if(obj===$('.input1').val()){
 
                         $(".thetrue").html("已存在该用户，请重新输入");
-                    }
-                }
+               
                 }
 
             });
