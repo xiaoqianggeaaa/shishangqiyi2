@@ -4,7 +4,7 @@ requirejs.config({
 }
 });
 requirejs(['jQuery'],function(){
-    requirejs(['conmon'],function(){
+    requirejs(['conmon','calendar'],function(){
         
             requirejs(['input','qiehuan','index','user',],function(){
                 requirejs(['through','cookie']);

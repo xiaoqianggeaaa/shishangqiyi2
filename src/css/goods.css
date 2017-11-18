@@ -179,19 +179,33 @@
 
 #is_right .isnews .isnew_mation .mation_p9 {
   margin-top: 16px;
+  position: relative;
 }
 
 #is_right .isnews .isnew_mation .mation_p9 span {
-  height: 35px;
+  height: 48px;
   width: 160px;
   border: 1px solid #D0D0D0;
   float: left;
   font-size: 14px;
   text-align: center;
-  line-height: 35px;
+  line-height: 48px;
   color: white;
   cursor: pointer;
   margin-right: 10px;
+}
+
+#is_right .isnews .isnew_mation .mation_p9 .theerweima {
+  height: 0px;
+  transition: 1s;
+  width: 153px;
+  position: absolute;
+  background: url("../img/theerweima.png");
+  background-size: 100% 100%;
+  right: 15px;
+  top: 47px;
+  opacity: 0;
+  box-sizing: border-box;
 }
 
 #is_right .isnews .isnew_mation .mation_p9 .zhancun {
@@ -204,6 +218,12 @@
 
 #is_right .isnews .isnew_mation .mation_p9 .erwei {
   background: url("../img/erwei.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+#is_right .isnews .isnew_mation .mation_p9 .erwei:hover + span.theerweima {
+  opacity: 1;
+  height: 153px;
 }
 
 #isul {

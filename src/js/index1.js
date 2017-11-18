@@ -18,14 +18,15 @@
                 }
                 this.obj=Object.assign({},defalut,obj);
                 this.ele=ele;
-                this.index=0;
+                var index=0;
+                this.index=index;
 
             }
 
      Lunbotu.prototype={
                 "constructor" : Lunbotu,
                 init(){
-                    var index=0;
+                    
                     
                     
                     console.log(width);
@@ -91,34 +92,36 @@
                             })
                    });
 
-                      this.move(ul,index);
+                      this.move(ul);
                       this.stop();
-                      this.play(ul,width,index);
-                       this.dotted(index,ul,width);
+                      this.play(ul,width);
+                       this.dotted(ul,width);
                        this.isnext(ul,width);
                        this.isback(ul,width);
                 },
-                move(ul,index,width){
+                move(ul,width){
                     clearInterval(this.seter);
                     this.seter=setInterval(function(){
-                         console.log(88);
-                        animate({
+                       
+                        animate(ul[0],{
 
-                            left:-index*this.ele[0].offsetWidth
+                            left:-this.index*this.ele[0].offsetWidth
                         })    
-                        this.dotted(index,ul,width); 
-                        index++;
-                        this.index=index-1;
-                        if(index>=4){
-                            index=0;
+
+                       
+                        this.dotted(ul,width); 
+                        this.index++;
+                        
+                        if(this.index>=4){
+                            this.index=0;
                         }
 
                     }.bind(this),3000)
-                     this.stop(index,ul);
+                     this.stop(ul);
                      
 
                 },
-                stop(index,ul,width){
+                stop(ul,width){
                    
                     this.ele.on("mouseenter","li",function(){
                         clearInterval(this.seter);
@@ -128,39 +131,20 @@
                        
                    
                 },
-                play(ul,index,width){
-                    var ul=ul;
-                   index=this.index;
-                   console.log(index);
-                ul.on("mouseleave","li",function(){
+                play(ul,width){
+             
+                ul.on("mouseout","li",function(){
                   
-            
-                        clearInterval(this.seter);
-
-                    this.seter=setInterval(function(){
-                        console.log(777);
-                        ul.animate({
-                            left:-index*this.ele[0].offsetWidth
-                        })    
-                        this.dotted(index,ul,width); 
-                        index++;
-                        this.index=index-1;
-
-                        if(index>=5){
-                            index=0;
-                        }
-                            
-                    }.bind(this),3000)
-                   }.bind(this))
-
+                      this.move(ul,width);
+                    }.bind(this));
                 },
-                dotted(index,ul,width){
+                dotted(ul,width){
                     
                     $(".isdotted li").css({
                         "background-color":""
 
                     })
-                   $(".isdotted li").eq(index).css({
+                   $(".isdotted li").eq(this.index).css({
                         "background-color":"black"
                    })
                    //点击点时候切换图片
@@ -175,9 +159,9 @@
                         ul.css({
                             "left": -$(e.target).index()*width+"px"
                         })
+                        console.log($(e.target).index()*width);
+                        this.index=$(e.target).index();
                         
-                        index=$(e.target).index();
-                        this.index=index;
                         
                    }.bind(this))
                 },

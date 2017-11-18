@@ -6,7 +6,7 @@ requirejs.config({
 requirejs(['jQuery'],function(){
     requirejs(['conmon'],function(){
         requirejs(['index1'],function(){
-              requirejs(['input','qiehuan1','user'],function(){
+              requirejs(['input','qiehuan1','user','calendar','cookie'],function(){
                     requirejs(['through1']);
               });
      

@@ -8,7 +8,7 @@ requirejs(['jQuery'],function(){
         
             requirejs(['car','conmon'],function(){
 
-                requirejs(['input','qiehuan1','user'],function(){
+                requirejs(['input','qiehuan1','user','calendar'],function(){
                     requirejs(['cookie']);
                 });
             });
