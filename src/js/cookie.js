@@ -1,5 +1,12 @@
 $(function(){
-    var mycookie=document.cookie.split('=');
+
+    var mycookie=document.cookie;
+    if(mycookie){
+    mycookie=mycookie.split("=");
+    thecookie=JSON.parse(mycookie[1]);
+    }
+
+
 
     if(mycookie[0]=="user"){
       $("#showit").css({
@@ -7,6 +14,10 @@ $(function(){
       }).before($('<a/>').html("我的账户").attr({
                 "href":"#"
       }).addClass('showit'));
+      //更新购物数量
+      $(".num").html("("+thecookie[0]+")");
+      $(".gouwuche i").html("("+thecookie[0]+")");
+      $('.gouwuche').next().find('i').html("("+thecookie[0]+")");
       //退出按钮
      $("#showit1").css({
             "display":"none"
@@ -30,7 +41,7 @@ $(function(){
                     var date=new Date();
                     date.setDate(date.getDate()-20);
                     console.log(date);
-                    document.cookie="user="+mycookie[1]+";expires="+date.toString()+";path=/";
+                    document.cookie="user="+thecookie[1]+";expires="+date.toString()+";path=/";
                     location.reload();
                     
                 })

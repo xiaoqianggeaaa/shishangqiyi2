@@ -19,6 +19,7 @@
             if($result){
                 echo "ok";
             }else{
+                  
                   $mysql="select * from myuser where id='$id'";
                   $rse=$conn->query($mysql);
                   $arr=$rse->fetch_all(MYSQLI_ASSOC);

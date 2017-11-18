@@ -11,6 +11,7 @@ $(function(){
             var thepriced;
             var English;
             var id;
+            //判断页面有没有传参
           if(location.search!=""){
             var arr=location.search.slice(1).split("&&");
             var arr1=arr[0].split("=");
@@ -37,7 +38,7 @@ $(function(){
             goods('get.php');
           }
 
-
+          //服务器请求函数
           function goods(thephp){
                 console.log(thephp);
               $.get(`http://localhost:1706//project/src/api/php/${thephp}?${arr1[0]}=${arr1[1]}&&${arr2[0]}=${arr2[1]}`,function(data){
@@ -92,6 +93,24 @@ $(function(){
                                 var thecount=$(".counts").val();
                                 var user=goodscookie[1];
                                 thedeng("goodlist.php",theimg,user,color,chicun,thecount,thepriced,English,id);
+
+                              //商品飞入购物车效果
+                              $('<div/>').addClass('flycar').css({
+                                  "background-image" : "url(../"+theimg+")"
+                              }).appendTo($('.isnew_mation')).animate({
+                                    "top":0,
+                                    left: -262
+                              },function(){
+                                  $('.flycar').animate({
+                                      top:281,
+                                      left:172,
+                                      width:0,
+                                      height:0
+
+                                  },function(){
+                                      $('.flycar').remove();
+                                  })
+                              });
                            }
 
                          }

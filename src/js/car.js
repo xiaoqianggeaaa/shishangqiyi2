@@ -7,10 +7,14 @@ $(function(){
             $("#isheader").load("../index.html #header");
 
         //获取cookie，看看有没有用户登录
-       
+   
     var thecookie=document.cookie.split("=");
+    if(document.cookie){
+        var mycookie=JSON.parse(thecookie[1]);
+    }
+    
     if(thecookie[0]=="user"){
-        $(".carp1").html("欢迎您的到来，"+thecookie[1]);
+        $(".carp1").html("欢迎您的到来，"+mycookie[1]);
 
 
         //发送ajax请求，获取该用户的信息
@@ -27,11 +31,13 @@ $(function(){
                     }
                 }
                             console.log(datalist);
+
                     $('#shopcar').html("");
             if(Array.isArray(datalist)){
                     datalist.forEach(function(item){
                             var theul=$('<ul/>').addClass('iscarul').attr({
-                                "idx": item.id
+                                "idx": item.id,
+                                'time':item.add_time
                             });
                             //第一个li
                             $('<li>').addClass('iscarli1').append($('<input/>').addClass('carinput').attr({
@@ -142,25 +148,27 @@ $(function(){
            $(".deleit").on('click',function(){
 
                 var id=$(this).parent().parent().parent().parent().attr('idx');
+                var time=$(this).parent().parent().parent().parent().attr('time');
+
                 
                 $(this).parent().parent().parent().parent().remove();
                  $('.carsum').html("￥0");
                 $('.carlow').html("￥0");
                 $('.carpay').html("￥0");
 
-                 thedele("dele.php",'id',id);
+                 thedele("dele.php",'id',id,mycookie[1],time);
 
 
            })
 
               })
       }
-            getinformation("getusercar.php",thecookie[1]);
+            getinformation("getusercar.php",mycookie[1]);
 
                                 //发送ajax请求，获取该用户的信息
-             function thedele(thephp,obj,val){
+             function thedele(thephp,obj,val,user,time){
                     console.log(thephp);
-             $.get("http://localhost:1706//project/src/api/php/"+thephp+"?"+obj+"="+val,function(data){
+             $.get("http://localhost:1706//project/src/api/php/"+thephp+"?"+obj+"="+val+"&&user="+user+"&&add_time="+time,function(data){
                 try{
                     var datalist=JSON.parse(data);
                 }catch(e){

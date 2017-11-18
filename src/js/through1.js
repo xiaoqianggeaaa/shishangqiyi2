@@ -1,4 +1,5 @@
 $(function(){
+    
     $("#Best>div").each(function(idx,item){
         $(this).attr({
             "idx": Number(idx+1)

@@ -1,21 +1,24 @@
 ;(function($){
     $(function(){
 
-         
+         //用户登录，判断密码是否正确
         $('#btn1').on("click",function(){
 
             setTimeout(function(){
              if($('.istrue').html()===""){
-                 thedeng('user.php',$("#inp1").val()); 
+                            var user=$("#inp1").val();
+                            var password=$("#inp2").val();
+                         sumb("usernews.php",user,password,"","","");
+                        
                 }
             },500)
         
         });
 
-            //用户登录
-     function thedeng(thephp,user){
-        
-        $.get("http://localhost:1706//project/src/api/php/"+thephp+"?user="+user,function(data){
+        //发送ajax请求，获取该用户的信息，更新购物车数量
+             function getinformation(thephp,user){
+                    console.log(thephp);
+                     $.get("http://localhost:1706//project/src/api/php/"+thephp+"?user="+user,function(data){
                 try{
                     var datalist=JSON.parse(data);
                 }catch(e){
@@ -25,33 +28,27 @@
                         var datalist=data;
                     }
                 }
-               
-                if(datalist==""){
-                    $(".istrue").html("不存在该用户，请先注册");
-                }else{
-                        if($('#inp2').val()==datalist){
-                            $('#isbackground').fadeOut();
+                console.log(datalist.length);
                             var date=new Date();
                             date.setDate(date.getDate()+7);
+                            var arr=[];
+                            arr.push(datalist.length);
+                            arr.push($("#inp1").val());
+                            arr=JSON.stringify(arr);
                           
                             if($('#check')[0].checked){
                                 console.log(666);
-                                document.cookie="user="+$("#inp1").val()+";expires="+date.toString()+";path=/";
+                                document.cookie="user="+arr+";expires="+date.toString()+";path=/";
                                     location.reload();
 
                             }else{
                                        document.cookie="user="+$("#inp1").val();
 
                             }
-                         
-                        }else{
-                        $(".istrue").html("密码不正确，请重新输入");
-                        $('#inp2').val("");
-                        }
-                }
-            });
-            
-        }
+
+
+            })
+                 }
         //注册
             $('.isdenglu').on("click",function(){
                      
@@ -76,20 +73,39 @@
         
             });
 
+            //判断是否存在该用户
         $('.input1').on('blur',function(){
-                var user=$(".input1").val();
+            
+             var user=$(".input1").val();
 
-                console.log(username);
-            sumb("usernews.php",user,password,username,sex,phone);
+
+            sumb("usernews.php",user);
         })
 
+        //判断用户是否登录和存在
+        $("#inp1").on("blur",function(){
+             var user=$("#inp1").val();
+              console.log(user);
+             if(user!=""){
+
+                setTimeout(function(){
+                    if($(".istrue").html()==""){
+                         sumb("usernews.php",user,"","","","");
+                    }
+                   
+                }, 500)
+                 
+             }
+           
+
+        })
 
         //注册函数
     function sumb(thephp,user,password,username,sex,phone){
         if(password==undefined){
             password="";
         }
-       
+        console.log(88888);
         $.get("http://localhost:1706//project/src/api/php/"+thephp+"?writeit=xx&&user="+user+"&&password="+password+"&&username="+username+"&&sex="+sex+"&&phone="+phone,function(data){
                 try{
                     var datalist=JSON.parse(data);
@@ -100,13 +116,26 @@
                         var datalist=data;
                     }
                 }
-                if(datalist!=""){
-                 for(var obj in datalist){
-                    
-
+                //根据服务端返回信息判断用户密码与用户名是否正确
+                if(datalist=="exsit"&&$(".input1").val()){
                         $(".thetrue").html("已存在该用户，请重新输入");
-               
-                }
+                       
+                    }else if(datalist=="noexsit"&&$("#inp1").val()!=""){
+                        
+                         $(".istrue").html("不存在该用户，或用户名错误");
+                    }else if(datalist=="error"){
+                         $(".istrue").html("密码错误，请输入正确的密码");
+
+                    }else if(datalist=="permit"){
+                        
+                //更新购物车物品数量
+                getinformation("getusercar.php",$("#inp1").val());
+                        
+                         //登录框样式操作
+                            $('#isbackground').fadeOut();
+
+                    }
+
 
             });
             

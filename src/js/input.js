@@ -1,17 +1,25 @@
 ;(function($){
+
+    $(function(){
+        //各个网页的链接与传承
       $("#content").on("click",function(){
           $(".inputp").fadeOut();
       })
       $(".gouwuche").on("click",function(){
-          location.href="./html/car.html";
+          location.href="http://localhost:1706/project/src/html/car.html";
       })
       $("#toindex").on("click",function(){
-          location.href="../index.html";
+          location.href="http://localhost:1706/project/src/index.html";
 
       })
-    $(function(){
-
-                 //input关闭
+      // 点击侧边栏登录框，打开登录界面
+      $('.dengluba').on("click",function(){
+            $('#isbackground').fadeIn();
+            $('#myform').fadeIn(); 
+      })
+        
+      //
+     //登录注册框关闭与打开
     $("#showit").click(function(){
       $("#myform").fadeIn();
       $("#myform1").css({
@@ -30,6 +38,11 @@
     })
     $("#close").click(function(){
       $("#isbackground").fadeOut();
+      $('#isbackground input').each(function(){
+        //关闭登录或注册框时清空所有input
+          $(this).val("");
+          
+      })
     })
 
   $('.isthea').click(function(){
